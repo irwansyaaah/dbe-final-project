@@ -118,14 +118,14 @@ postgres-create-table:
 	@echo '__________________________________________________________'
 	@echo 'Creating tables...'
 	@echo '_________________________________________'
-	@docker exec -it ${POSTGRES_CONTAINER_NAME} psql -U ${POSTGRES_USER} -d ${POSTGRES_DW_DB} -f sql/ddl-retail.sql
+	@docker exec -it ${POSTGRES_CONTAINER_NAME} psql -U ${POSTGRES_USER} -d ${POSTGRES_DW_DB} -f sql/ddl-smoking.sql
 	@echo '==========================================================='
 
 postgres-ingest-csv:
 	@echo '__________________________________________________________'
 	@echo 'Ingesting CSV...'
 	@echo '_________________________________________'
-	@docker exec -it ${POSTGRES_CONTAINER_NAME} psql -U ${POSTGRES_USER} -d ${POSTGRES_DW_DB} -f sql/ingest-retail.sql
+	@docker exec -it ${POSTGRES_CONTAINER_NAME} psql -U ${POSTGRES_USER} -d ${POSTGRES_DW_DB} -f sql/ingest-smoking.sql
 	@echo '==========================================================='
 
 postgres-create-warehouse:
